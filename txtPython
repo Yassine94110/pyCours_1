@@ -1,0 +1,184 @@
+temp = 6.892
+distance = 19.7
+vitesse = distance / temp
+print("La vitesse est:", vitesse, "m/s")
+
+
+# input 
+nom = input("Entrez votre nom : ")
+age = int(input("Entrez votre âge : "))
+# print
+print("Vous vous appelez", nom, "et vous avez", age, "ans.")
+
+
+import math  # importer le module math pour avoir accès à la fonction sqrt()
+# input 
+x = float(input("Entrez un nombre flottant : "))
+# comparaison
+if x >= 0:
+    racine = math.sqrt(x)
+    print("La racine carrée de", x, "est", racine)
+else:
+    print("Erreur : le nombre saisi est négatif.")
+
+
+# inputs
+mot1 = input("Entrez le premier mot : ")
+mot2 = input("Entrez le deuxième mot : ")
+# Comparaison lexicographique
+if mot1 < mot2:
+    print("Le mot", mot1, "vient avant", mot2, "dans l'ordre lexicographique.")
+elif mot1 > mot2:
+    print("Le mot", mot2, "vient avant", mot1, "dans l'ordre lexicographique.")
+else:
+    print("Les deux mots sont identiques.")
+
+
+# input 
+pSeuil = 2.3
+vSeuil = 7.41
+# input
+pression = float(input("Entrez la pression courante de l'enceinte : "))
+volume = float(input("Entrez le volume courant de l'enceinte : "))
+# comparaison et traitement
+if pression > pSeuil and volume > vSeuil:
+    print("Arrêt immédiat : pression et volume trop élevés !")
+elif pression > pSeuil:
+    print("La pression est trop élevée. Augmentez le volume de l'enceinte.")
+elif volume > vSeuil:
+    print("Le volume est trop élevé. Diminuez le volume de l'enceinte.")
+else:
+    print("Tout va bien : pression et volume dans les limites autorisées.")
+
+
+# input
+chaine = input("Entrez une chaîne de caractères : ")
+# check @ et fini par .com
+if '@' in chaine and chaine.endswith('.com'):
+    print("C'est un email valide.")
+else:
+    print("Ce n'est pas un email valide.")
+
+
+# input
+message = input("Entrez le message à afficher : ")
+# loop 10 fois
+for i in range(10):
+    print("Ceci est le message numéro", i+1, ":", message)
+
+
+# input
+mot = input("Entrez un mot : ")
+# loop 
+for lettre in mot:
+    print(lettre)
+
+# Init a b
+a = 0
+b = 10
+# loop pour afficher et incrémenter a tant qu'il est inférieur à b
+while a < b:
+    print("a =", a)
+    a += 1
+# loop pour décrémenter b et afficher sa valeur si elle est impaire
+while b != 0:
+    b -= 1
+    if b % 2 == 1:
+        print("b =", b)
+
+
+# loop tant que la saisie n'est pas valide
+while True:
+    # Demande à l'utilisateur de saisir un entier
+    saisie = input("Saisir un entier entre 1 et 10 : ")
+    # Essaye de convertir la saisie en entier
+    try:
+        entier = int(saisie)
+    except ValueError:
+        # La saisie n'est pas un entier valide
+        print("Erreur : saisie non valide.")
+        continue
+    # Vérifie si l'entier est dans l'intervalle 1 à 10
+    if entier < 1 or entier > 10:
+        print("Erreur : l'entier doit être entre 1 et 10.")
+        continue
+    # Si la saisie est valide, sort de la boucle
+    break
+# print 
+print("Vous avez saisi :", entier)
+
+
+chaine = "Bonjour tout le monde !"
+for caractere in chaine:
+    print(caractere)
+liste = [1, 2, 3, 4, 5]
+for element in liste:
+    print(element)
+for i in range(0, 15, 3):
+    print(i)
+
+
+n = int(input("Entrez un entier positif : "))
+i = 0
+compteur = 0
+while compteur < n:
+    if i % 2 == 0:
+        print(i)
+        compteur += 1
+    i += 1
+
+n = int(input("Entrez un entier positif : "))
+compteur = 0
+for i in range(0, n*2, 2):
+    if compteur < n:
+        print(i)
+        compteur += 1
+    else:
+        break
+
+
+# init liste
+liste = [17, 38, 10, 25, 72]
+# tri 
+liste.sort()
+print(liste)
+# add 12
+liste.append(12)
+print(liste)
+# reverse et print
+liste.reverse()
+print(liste)
+# print indice de l'élément 17
+print(liste.index(17))
+# delete élément 38 et print de la liste
+liste.remove(38)
+print(liste)
+# print de la sous-liste du 2e au 3e élément
+print(liste[1:3])
+#print de la sous-liste du début au 2e élément
+print(liste[:2])
+# print de la sous-liste du 3e élément à la fin de la liste
+print(liste[2:])
+# print de la sous-liste complète de la liste
+print(liste[:])
+
+
+chaine = input("Entrez une chaine de caractère à inverser : ")
+print(chaine[::-1])
+
+chaine = input("Entrez une chaine qui est peut-être un palindrome : ")
+if chaine == chaine[::-1]:
+    print(chaine, "est un palindrome")
+
+
+# input email 
+chaine = input("Entrez un email valide ou non : ")
+# check  si contient un @ et se termine par .com
+if '@' in chaine and '.' in chaine:
+    partie_avant_point, partie_apres_point = chaine.rsplit(".", 1)
+    if len(partie_apres_point) <= 3:
+        print("La chaîne est un email valide")
+    else:
+        print("La chaîne n'est pas un email valide : trop de caractères après le point")
+else:
+    print("La chaîne n'est pas un email valide : pas de @")
