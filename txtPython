@@ -4,7 +4,7 @@ vitesse = distance / temp
 print("La vitesse est:", vitesse, "m/s")
 
 
-# input 
+# input
 nom = input("Entrez votre nom : ")
 age = int(input("Entrez votre âge : "))
 # print
@@ -12,7 +12,7 @@ print("Vous vous appelez", nom, "et vous avez", age, "ans.")
 
 
 import math  # importer le module math pour avoir accès à la fonction sqrt()
-# input 
+# input
 x = float(input("Entrez un nombre flottant : "))
 # comparaison
 if x >= 0:
@@ -34,7 +34,7 @@ else:
     print("Les deux mots sont identiques.")
 
 
-# input 
+# input
 pSeuil = 2.3
 vSeuil = 7.41
 # input
@@ -69,7 +69,7 @@ for i in range(10):
 
 # input
 mot = input("Entrez un mot : ")
-# loop 
+# loop
 for lettre in mot:
     print(lettre)
 
@@ -104,7 +104,7 @@ while True:
         continue
     # Si la saisie est valide, sort de la boucle
     break
-# print 
+# print
 print("Vous avez saisi :", entier)
 
 
@@ -139,7 +139,7 @@ for i in range(0, n*2, 2):
 
 # init liste
 liste = [17, 38, 10, 25, 72]
-# tri 
+# tri
 liste.sort()
 print(liste)
 # add 12
@@ -171,7 +171,7 @@ if chaine == chaine[::-1]:
     print(chaine, "est un palindrome")
 
 
-# input email 
+# input email
 chaine = input("Entrez un email valide ou non : ")
 # check  si contient un @ et se termine par .com
 if '@' in chaine and '.' in chaine:
@@ -182,3 +182,68 @@ if '@' in chaine and '.' in chaine:
         print("La chaîne n'est pas un email valide : trop de caractères après le point")
 else:
     print("La chaîne n'est pas un email valide : pas de @")
+
+//
+a = []
+b = [0.0] * 5
+
+print(a)
+print(b)
+
+
+for i in range(4):
+    print(i)
+for i in range(4, 8):
+    print(i)
+for i in range(2, 9, 2):
+    print(i)
+
+//
+chose = [0, 1, 2, 3, 4, 5]
+print(3 in chose)  # affiche True
+print(6 in chose)  # affiche False
+
+
+//
+
+x = int(input("Entrez un nombre : "))
+with open("data.txt", "w") as f:
+    for i in range(x):
+        chaine = input(f"Entrez la chaîne numéro {i+1} : ")
+        f.write(chaine + "\n")
+
+print("Les chaînes ont été enregistrées dans data.txt.")
+
+with open("data.txt", "r") as f:
+    for line in f:
+        line = line.strip()
+        if "@" in line and line.endswith(".com"):
+            print(f"{line} est un email.")
+        else:
+            print(f"{line} n'est pas un email.")
+
+def compterMots(chaine):
+    chaine = chaine.lower()
+    for c in [".", ",", ";", ":", "!", "?", "'"]:
+        chaine = chaine.replace(c, " ")
+
+    mots = chaine.split()
+    freq = {}
+    for mot in mots:
+        if mot in freq:
+            freq[mot] += 1
+        else:
+            freq[mot] = 1
+
+    return freq
+
+
+def cube(x):
+    return x * x * x
+
+def volumeSphere(r):
+    pi = 3.14159265358
+    v = (4 / 3) * pi * cube(r)
+    return v
+def somme(a, b, c):
+    return a + b + c
